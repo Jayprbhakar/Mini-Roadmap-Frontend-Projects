@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic greeting generator</title>
+    <link rel="stylesheet" href="chat.css">
+    <script src="greeting.js"></script>
+</head>
+<body>
+
+    <div class="style">
+        <div>
+
+            <h2>Dynamic greeting generator</h2>
+            
+            <input type="text" id="userinput" placeholder="Enter your name">
+
+            <input type="button" id="btn" value="click" onclick="run()" >
+            
+            <p id="message"></p>
+        </div>
+    </div>
+
+    <script>
+
+        function run(){
+            let p1 = document.getElementById("userinput");
+            let result = `Hello ${p1.value}, welcome to the website!`;
+
+            // passed in the p tag
+            document.getElementById("message").innerHTML = result;
+            
+        }
+
+        // :: things i need to make smart greeting project ::
+        // Enter at least 4 characters > "please enter 4 character name e.g: 'jay' "
+        // 
+
+
+        function charName(){
+            if ((userinput.value).length < 4){
+                let p1 = document.getElementById("userinput");
+                let result = `Hello ${p1.value}, welcome to the website!`;
+                document.getElementById("message").innerHTML = result;
+            } else {
+                let result = `please ${p1.value}, enter 4 digit character`;
+            }              
+        }
+
+        
+    </script>
+
+
+    
+</body>
+</html>

@@ -1,0 +1,11 @@
+* {
+    background-color: rgb(48, 44, 38);
+    color: white;
+}
+
+
+.style {
+    display: flex;
+    justify-content: center;
+
+}
