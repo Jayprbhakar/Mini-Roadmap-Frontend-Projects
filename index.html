@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dynamic greeting generator</title>
     <link rel="stylesheet" href="chat.css">
-    <script src="greeting.js"></script>
 </head>
 <body>
-
+    <!-- greeting mini project -->
     <div class="style">
         <div>
 
@@ -16,38 +15,46 @@
             
             <input type="text" id="userinput" placeholder="Enter your name">
 
-            <input type="button" id="btn" value="click" onclick="run()" >
+            <input type="button" id="btn" value="click" onclick="charName()">
             
-            <p id="message"></p>
+            <h1 id="message"></h1>
         </div>
     </div>
 
     <script>
 
-        function run(){
-            let p1 = document.getElementById("userinput");
-            let result = `Hello ${p1.value}, welcome to the website!`;
+        // function run(){
+        //     let p1 = document.getElementById("userinput");
+        //     let result = `Hello ${p1.value}, welcome to the website!`;
 
-            // passed in the p tag
-            document.getElementById("message").innerHTML = result;
+        //     // passed in the p tag
+        //     document.getElementById("message").innerHTML = result;
+        //     let size = (p1.value).length;
+        //     alert(size);
             
-        }
+        // }
 
         // :: things i need to make smart greeting project ::
         // Enter at least 4 characters > "please enter 4 character name e.g: 'jay' "
-        // 
-
-
+        
+        // let para = document.getElementById("userinput");
+        // let result = `Hello ${para.value}, welcome to the website!`;
+        // document.getElementById("message").innerHTML = result;
+        
         function charName(){
-            if ((userinput.value).length < 4){
-                let p1 = document.getElementById("userinput");
-                let result = `Hello ${p1.value}, welcome to the website!`;
+            let para = document.getElementById("userinput");
+            if ((para.value).length >= 3 && (para.value).length <= 18){
+                let result = `Hello ${para.value}, welcome to the website!`;
                 document.getElementById("message").innerHTML = result;
             } else {
-                let result = `please ${p1.value}, enter 4 digit character`;
+                // let result = `please ${para.value} enter 4 digit character`;
+                let msgError = "please enter 3 digit character at least OR you can enter only 18 characters";
+                alert(msgError);
+                // alert(p1.value); input values of user Entered
             }              
         }
 
+        // BUG1 Status:critical >> IMP:validation of characters still invalid like number,special characters and spaces are allowed need to fix later
         
     </script>
 
