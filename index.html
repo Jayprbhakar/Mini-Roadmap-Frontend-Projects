@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dynamic greeting generator</title>
     <link rel="stylesheet" href="chat.css">
+    <script src="greeting.js"></script>
 </head>
 <body>
+
     <!-- greeting mini project -->
     <div class="style">
         <div>
 
             <h2>Dynamic greeting generator</h2>
             
-            <input type="text" id="userinput" placeholder="Enter your name">
+            <input type="text" id="userinput" placeholder="Enter Your First Name">
 
             <input type="button" id="btn" value="click" onclick="charName()">
             
@@ -22,44 +24,39 @@
     </div>
 
     <script>
-
-        // function run(){
-        //     let p1 = document.getElementById("userinput");
-        //     let result = `Hello ${p1.value}, welcome to the website!`;
-
-        //     // passed in the p tag
-        //     document.getElementById("message").innerHTML = result;
-        //     let size = (p1.value).length;
-        //     alert(size);
+        
+        // :: Final validation of input
+        function charName(){ 
             
-        // }
-
-        // :: things i need to make smart greeting project ::
-        // Enter at least 4 characters > "please enter 4 character name e.g: 'jay' "
-        
-        // let para = document.getElementById("userinput");
-        // let result = `Hello ${para.value}, welcome to the website!`;
-        // document.getElementById("message").innerHTML = result;
-        
-        function charName(){
             let para = document.getElementById("userinput");
-            if ((para.value).length >= 3 && (para.value).length <= 18){
-                let result = `Hello ${para.value}, welcome to the website!`;
-                document.getElementById("message").innerHTML = result;
+            let userText = para.value;
+            
+            // pattern only character A to z and a to z lower and upper both allowed
+    
+            let Regu = /^[A-Za-z]+$/;
+            let res = userText.match(Regu);
+            if(res){
+                if ((para.value).length >= 3 && (para.value).length <= 10) {
+                    let result = `Hello ${para.value}, welcome to the website!`;
+                    document.getElementById("message").innerHTML = result;
+                } else {
+                    let msgError = "please enter 3 digit character at least OR you can enter only 18 characters";
+                    alert(msgError);
+                }              
             } else {
-                // let result = `please ${para.value} enter 4 digit character`;
-                let msgError = "please enter at least 3 characters OR You can enter only 18 characters";
-                alert(msgError);
-                // alert(p1.value); input values of user Entered
-            }              
+                let charError = "please enter only Alphabets";
+                alert(charError);
+            }
         }
 
-        // BUG1 Status:critical >> IMP:validation of characters still invalid like number,special characters and spaces are allowed need to fix later
+
+        
+
+        // IGNORE THIS ::: BUG1 Status:critical >> IMP:validation of characters still invalid like number,special characters and spaces are allowed need to fix later
         
     </script>
 
 
     
 </body>
-
 </html>
