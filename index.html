@@ -36,12 +36,16 @@
             let Regu = /^[A-Za-z]+$/;
             let res = userText.match(Regu);
             if(res){
-                if ((para.value).length >= 3 && (para.value).length <= 10) {
+                if ((para.value).length >= 3){
                     let result = `Hello ${para.value}, welcome to the website!`;
                     document.getElementById("message").innerHTML = result;
+            // ? invalid error show work on it also for max 10 character allowed not more than this show this error if > 10 char
+                } else if((para.value).length >= 10){
+                    let msgError1 = "You can enter Maximum 10 characters";
+                    alert(msgError1);
                 } else {
-                    let msgError = "please enter 3 digit character at least OR you can enter only 18 characters";
-                    alert(msgError);
+                    let msgError2 = "please enter at least 3 characters";
+                    alert(msgError2);
                 }              
             } else {
                 let charError = "please enter only Alphabets";
